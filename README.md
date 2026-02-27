@@ -10,7 +10,6 @@ Bienvenue sur le dépôt de mon portfolio personnel. Ce site présente mon parco
 - **styles.css** : Fichier contenant les styles CSS pour le site.
 - **CV Damien_Gauthier.pdf** : Mon CV téléchargeable.
 - **images/** : Dossier contenant les images utilisées sur le site.
-- **docker/** : Configuration Docker pour déployer le site.
 
 ## Fonctionnalités
 
@@ -22,7 +21,6 @@ Bienvenue sur le dépôt de mon portfolio personnel. Ce site présente mon parco
 ## Technologies utilisées
 
 - **HTML5** et **CSS3** : Pour la structure et le style du site.
-- **Docker** : Pour le déploiement du site.
 
 ## Auteur
 
