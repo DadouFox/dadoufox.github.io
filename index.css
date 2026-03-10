@@ -1,0 +1,133 @@
+/* =========================
+   Accueil uniquement
+   ========================= */
+.home-page main {
+    width: min(1380px, 95vw);
+}
+
+.home-page main a {
+    color: var(--home-primary);
+}
+
+.home-page nav {
+    background: rgba(83, 116, 153, 0.76);
+}
+
+.home-page nav a:hover {
+    background-color: rgba(122, 176, 236, 0.26);
+}
+
+#main-title {
+    font-family: var(--font-display);
+    width: auto;
+    margin: 0 0 14px;
+    font-size: clamp(2.2rem, 5.4vw, 4rem);
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    background: linear-gradient(145deg, var(--surface) 0%, var(--surface-2) 100%);
+    border: 1px solid var(--line-soft);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 52px 56px;
+    min-height: clamp(470px, 56vh, 640px);
+}
+
+.about-section > div {
+    flex: 1;
+    max-width: 980px;
+}
+
+.about-section div p {
+    max-width: 82ch;
+    text-align: left;
+    font-size: clamp(1.24rem, 2vw, 1.62rem);
+    line-height: 1.9;
+    color: var(--text-soft);
+}
+
+.about-section div p:not(#main-title) {
+    margin: 12px 0 0;
+    max-width: 78ch;
+    letter-spacing: 0.018em;
+}
+
+.key-highlight {
+    color: var(--home-primary);
+    font-weight: 700;
+}
+
+.about-section h2 {
+    margin: 22px 0 16px;
+    color: var(--home-primary);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-weight: 700;
+}
+
+.about-image {
+    width: 250px;
+    height: auto;
+    border-radius: 18px;
+    border: 4px solid var(--line);
+    flex-shrink: 0;
+}
+
+@media (max-width: 980px) {
+    .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 26px;
+        gap: 20px;
+        min-height: 0;
+    }
+
+    .about-section > div {
+        max-width: 100%;
+    }
+
+    .about-image {
+        width: 180px;
+        height: auto;
+    }
+
+    #main-title {
+        font-size: clamp(1.95rem, 7.4vw, 2.7rem);
+    }
+
+    .about-section div p {
+        font-size: 1.14rem;
+        line-height: 1.78;
+    }
+
+    .about-section h2 {
+        margin: 16px 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-title {
+        font-size: clamp(1.65rem, 9vw, 2.1rem);
+        line-height: 1.08;
+    }
+
+    .about-section {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .about-image {
+        width: 132px;
+        height: auto;
+    }
+
+    .about-section div p {
+        font-size: 1.1rem;
+        line-height: 1.64;
+    }
+}

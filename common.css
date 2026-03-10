@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@500;600;700&display=swap');
+
+/* =========================
+   Variables communes
+   ========================= */
+:root {
+    --bg-1: #1f232b;
+    --bg-2: #2a2f3a;
+    --surface: #3f4248;
+    --surface-2: #494d55;
+    --text-main: #f5f7fa;
+    --text-soft: #c8d1df;
+    --line: #a7c7e7;
+    --line-soft: rgba(167, 199, 231, 0.55);
+    --shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+
+    --home-primary: #a7c7e7;
+    --cursus-primary: #8be8a9;
+    --projects-primary: #f29b9b;
+    --skills-primary: #ffc168;
+    --contact-primary: #d7b5ff;
+
+    --font-ui: 'Manrope', 'Segoe UI', sans-serif;
+    --font-display: 'Inter', 'Manrope', 'Segoe UI', sans-serif;
+}
+
+/* =========================
+   Base commune
+   ========================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 8%, #333942 0%, transparent 34%),
+        radial-gradient(circle at 94% 18%, #2f3847 0%, transparent 32%),
+        linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    background-color: var(--bg-1);
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+main {
+    width: min(1180px, 92vw);
+    margin: 34px auto 0;
+    padding-bottom: 32px;
+    flex: 1 0 auto;
+}
+
+/* =========================
+   Navigation commune
+   ========================= */
+nav {
+    width: min(1180px, 92vw);
+    margin: 16px auto 0;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transform: translateY(-1px);
+}
+
+.cv-download {
+    margin-left: auto;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* =========================
+   Footer commun
+   ========================= */
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(17, 19, 24, 0.92);
+    color: var(--text-main);
+    text-align: center;
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    margin-top: 0;
+    font-size: 1.05rem;
+}
+
+/* Titres des pages hors accueil */
+#cursus-title,
+#projects-title,
+#skills-title,
+#contact-title {
+    text-align: center;
+    margin: 0 0 24px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5.2vw, 3.9rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+}
+
+/* =========================
+   Responsive commun
+   ========================= */
+@media (max-width: 980px) {
+    nav {
+        top: 0;
+        border-radius: 0 0 14px 14px;
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 8px;
+    }
+
+    nav a {
+        font-size: 0.92rem;
+        padding: 8px 10px;
+        text-align: center;
+    }
+
+    .cv-download {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    main {
+        width: min(640px, 94vw);
+        margin-top: 24px;
+    }
+
+    footer {
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 8px 6px;
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 0.84rem;
+        padding: 7px 8px;
+        flex: 1 1 calc(50% - 10px);
+        min-width: 120px;
+    }
+
+    .cv-download {
+        flex: 1 1 100%;
+    }
+
+    main {
+        width: 95vw;
+        margin-top: 18px;
+    }
+
+    #cursus-title,
+    #projects-title,
+    #skills-title,
+    #contact-title {
+        font-size: 1.55rem;
+        margin-bottom: 18px;
+    }
+}
