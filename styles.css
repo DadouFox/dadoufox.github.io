@@ -378,6 +378,10 @@ footer {
     border: 1px solid rgba(215, 181, 255, 0.62);
 }
 
+#contact-form-panel {
+    border: 1px solid rgba(215, 181, 255, 0.62);
+}
+
 .skills-page-panel h2,
 .contact-page-panel h2,
 .contact-form-panel h2 {
@@ -444,7 +448,18 @@ footer {
     gap: 10px;
 }
 
+#contact-form {
+    display: grid;
+    gap: 10px;
+}
+
 .contact-form-panel label {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    font-weight: 600;
+}
+
+#contact-form label {
     font-size: 0.98rem;
     color: var(--text-soft);
     font-weight: 600;
@@ -452,6 +467,19 @@ footer {
 
 .contact-form-panel input,
 .contact-form-panel textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(215, 181, 255, 0.52);
+    border-radius: 10px;
+    background: rgba(17, 19, 24, 0.45);
+    color: var(--text-main);
+    padding: 10px 12px;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid rgba(215, 181, 255, 0.52);
@@ -472,7 +500,25 @@ footer {
     min-height: 140px;
 }
 
+#contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
 .contact-form-panel button {
+    appearance: none;
+    margin-top: 4px;
+    border: 1px solid rgba(215, 181, 255, 0.72);
+    background: rgba(215, 181, 255, 0.14);
+    color: var(--contact-primary);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#contact-form button {
     appearance: none;
     margin-top: 4px;
     border: 1px solid rgba(215, 181, 255, 0.72);
