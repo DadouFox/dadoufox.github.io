@@ -188,6 +188,16 @@ footer {
     font-weight: 700;
 }
 
+#cursus-title,
+#projects-title,
+#skills-title,
+#contact-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5.2vw, 3.9rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+}
+
 /* =========================
    Accueil
    ========================= */
@@ -340,8 +350,16 @@ footer {
     margin-top: 34px;
 }
 
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
 .skills-page-panel,
-.contact-page-panel {
+.contact-page-panel,
+.contact-form-panel {
     border-radius: 22px;
     padding: 28px;
     box-shadow: var(--shadow);
@@ -356,8 +374,13 @@ footer {
     border: 1px solid rgba(215, 181, 255, 0.62);
 }
 
+.contact-form-panel {
+    border: 1px solid rgba(215, 181, 255, 0.62);
+}
+
 .skills-page-panel h2,
-.contact-page-panel h2 {
+.contact-page-panel h2,
+.contact-form-panel h2 {
     margin: 0 0 16px;
     font-size: clamp(1.8rem, 2.8vw, 2.2rem);
     font-weight: 700;
@@ -371,11 +394,22 @@ footer {
     color: var(--contact-primary);
 }
 
+.contact-form-panel h2 {
+    color: var(--contact-primary);
+}
+
 .skills-page-panel ul,
 .contact-page-panel ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.contact-page-panel ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .skills-page-panel li {
@@ -393,11 +427,61 @@ footer {
 }
 
 .contact-page-panel li {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-size: 1.08rem;
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(17, 19, 24, 0.32);
+}
+
+.contact-form-panel form {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-form-panel label {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    font-weight: 600;
+}
+
+.contact-form-panel input,
+.contact-form-panel textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(215, 181, 255, 0.52);
+    border-radius: 10px;
+    background: rgba(17, 19, 24, 0.45);
+    color: var(--text-main);
+    padding: 10px 12px;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+}
+
+.contact-form-panel textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form-panel button {
+    margin-top: 4px;
+    border: 1px solid rgba(215, 181, 255, 0.72);
+    background: rgba(215, 181, 255, 0.14);
+    color: var(--contact-primary);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-form-panel button:hover {
+    background: rgba(215, 181, 255, 0.24);
 }
 
 .skills-page a {
@@ -411,6 +495,14 @@ footer {
 .contact-page a:hover,
 .skills-page a:hover {
     text-decoration: underline;
+}
+
+#cursus-title {
+    color: var(--cursus-primary);
+}
+
+#projects-title {
+    color: var(--projects-primary);
 }
 
 #skills-title {
@@ -651,6 +743,10 @@ details.project-details:not([open]) > summary::after {
         gap: 14px;
     }
 
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
     .project-item.text-left img,
     .project-item.text-right img,
     .project-item.text-left p,
@@ -721,6 +817,7 @@ details.project-details:not([open]) > summary::after {
     .contact-info,
     .skills-page-panel,
     .contact-page-panel,
+    .contact-form-panel,
     .cursus-page main section,
     .projects-page main section {
         padding: 14px;
@@ -759,7 +856,14 @@ details.project-details:not([open]) > summary::after {
 
     .contact-page-panel li {
         font-size: 0.96rem;
-        margin-bottom: 16px;
+        margin-bottom: 0;
+    }
+
+    .contact-form-panel label,
+    .contact-form-panel input,
+    .contact-form-panel textarea,
+    .contact-form-panel button {
+        font-size: 0.95rem;
     }
 
     .contact-icon {
