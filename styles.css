@@ -58,6 +58,11 @@ main {
     flex: 1 0 auto;
 }
 
+/* L'accueil peut etre un peu plus large pour donner plus d'espace au bloc principal. */
+.home-page main {
+    width: min(1380px, 95vw);
+}
+
 a {
     color: var(--home-primary);
 }
@@ -96,11 +101,13 @@ nav a:hover {
     transform: translateY(-1px);
 }
 
+/* Le bouton CV est pousse a droite en desktop, puis repasse dans le flux en mobile. */
 .cv-download {
     margin-left: auto;
     border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+/* Couleurs de nav par page pour garder un code visuel coherent. */
 .home-page nav {
     background: rgba(83, 116, 153, 0.76);
 }
@@ -199,16 +206,23 @@ footer {
 .about-section {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 42px;
     background: linear-gradient(145deg, var(--surface) 0%, var(--surface-2) 100%);
     border: 1px solid var(--line-soft);
     border-radius: 22px;
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding: 52px 56px;
+    min-height: clamp(470px, 56vh, 640px);
+}
+
+/* La colonne de texte prend plus de place pour mieux respirer sur grand ecran. */
+.about-section > div {
+    flex: 1;
+    max-width: 980px;
 }
 
 .about-section div p {
-    max-width: 72ch;
+    max-width: 82ch;
     text-align: left;
     font-size: clamp(1.24rem, 2vw, 1.62rem);
     line-height: 1.9;
@@ -217,7 +231,7 @@ footer {
 
 .about-section div p:not(#main-title) {
     margin: 12px 0 0;
-    max-width: 66ch;
+    max-width: 78ch;
     letter-spacing: 0.018em;
 }
 
@@ -234,13 +248,14 @@ footer {
 }
 
 .about-image {
-    width: 190px;
+    width: 250px;
     height: auto;
     border-radius: 18px;
     border: 4px solid var(--line);
     flex-shrink: 0;
 }
 
+/* Deux colonnes sur desktop, une seule colonne en responsive. */
 .skills-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -276,6 +291,7 @@ footer {
     align-items: stretch;
 }
 
+/* Panneaux de base: meme volume visuel, seule la couleur de bordure change par contexte. */
 .skills-page-panel,
 .contact-page-panel,
 .contact-form-panel {
@@ -290,10 +306,6 @@ footer {
 }
 
 .contact-page-panel {
-    border: 1px solid rgba(215, 181, 255, 0.62);
-}
-
-.contact-form-panel {
     border: 1px solid rgba(215, 181, 255, 0.62);
 }
 
@@ -336,6 +348,7 @@ footer {
     gap: 12px;
 }
 
+/* Liste des competences: icone + texte alignes horizontalement. */
 .skills-page-panel li {
     margin-bottom: 16px;
     font-size: clamp(1.4rem, 2.2vw, 1.9rem);
@@ -363,11 +376,13 @@ footer {
     background: rgba(17, 19, 24, 0.32);
 }
 
+/* Protection contre les URL/email longues qui peuvent casser la carte. */
 .contact-page-panel li a {
     overflow-wrap: anywhere;
     word-break: break-word;
 }
 
+/* Le formulaire est en grille verticale pour garder des espacements stables. */
 .contact-form-panel form,
 #contact-form {
     display: grid;
@@ -400,6 +415,7 @@ footer {
     display: none !important;
 }
 
+/* On autorise uniquement l'agrandissement vertical du message. */
 .contact-form-panel textarea,
 #contact-form textarea {
     resize: vertical;
@@ -510,6 +526,63 @@ footer {
     margin-top: 34px;
 }
 
+.projects-header {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Le titre prend toute la ligne pour rester centre, meme avec les boutons de filtre. */
+.projects-header #projects-title {
+    width: 100%;
+}
+
+/* Boutons 1A/2A: positionnes pres du titre en desktop, repasses dans le flux en mobile. */
+.projects-page .year-switch-buttons {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.projects-page .year-switch-button {
+    appearance: none;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    line-height: 1;
+    padding: 9px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(242, 155, 155, 0.7);
+    background: rgba(17, 19, 24, 0.55);
+    color: var(--projects-primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.projects-page .year-switch-button:hover {
+    background: rgba(242, 155, 155, 0.2);
+    text-decoration: none;
+}
+
+.projects-page .year-switch-button.is-active {
+    background: rgba(242, 155, 155, 0.3);
+    border-color: rgba(242, 155, 155, 0.9);
+}
+
+.projects-year-1-section,
+.projects-year-2-section {
+    scroll-margin-top: 110px;
+}
+
+/* Necessaire car les sections projets utilisent display:flex.
+   Sans cette regle, l'attribut HTML [hidden] peut etre visuellement ignore. */
+.projects-page main section[hidden] {
+    display: none !important;
+}
+
 .projects-page main section {
     border: 1px solid rgba(242, 155, 155, 0.58);
     padding: 24px;
@@ -587,6 +660,7 @@ details.project-details > summary {
     text-align: center;
 }
 
+/* Le texte du bouton est gere en pseudo-element pour eviter de dupliquer le HTML. */
 details.project-details[open] > summary::after {
     content: "Voir moins";
 }
@@ -596,7 +670,7 @@ details.project-details:not([open]) > summary::after {
 }
 
 /* =========================
-   Responsive
+    Responsive <= 980px (tablette + petits laptops)
    ========================= */
 @media (max-width: 980px) {
     nav {
@@ -629,12 +703,17 @@ details.project-details:not([open]) > summary::after {
     .about-section {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;
+        padding: 26px;
         gap: 20px;
+        min-height: 0;
+    }
+
+    .about-section > div {
+        max-width: 100%;
     }
 
     .about-image {
-        width: 150px;
+        width: 180px;
         height: auto;
     }
 
@@ -655,6 +734,7 @@ details.project-details:not([open]) > summary::after {
         grid-template-columns: 1fr;
     }
 
+    /* Les cartes projets se lisent mieux en pile verticale sur largeur reduite. */
     .project-item,
     .project-item.text-left,
     .project-item.text-right {
@@ -665,6 +745,31 @@ details.project-details:not([open]) > summary::after {
 
     .contact-layout {
         grid-template-columns: 1fr;
+    }
+
+    .projects-page .year-switch-buttons {
+        position: static;
+        gap: 8px;
+    }
+
+    /* Le titre reste centre, les boutons passent au-dessus/dessous selon la place. */
+    .projects-page .year-switch-button {
+        font-size: 0.84rem;
+        padding: 9px 12px;
+    }
+
+    .projects-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .projects-header #projects-title {
+        width: 100%;
+        margin: 0 auto 12px;
+        text-align: center;
     }
 
     .contact-page-panel li {
@@ -707,6 +812,9 @@ details.project-details:not([open]) > summary::after {
     }
 }
 
+/* =========================
+    Responsive <= 480px (smartphones)
+    ========================= */
 @media (max-width: 480px) {
     nav {
         padding: 8px 6px;
@@ -776,6 +884,24 @@ details.project-details:not([open]) > summary::after {
     .contact-page-panel h2,
     .contact-form-panel h2 {
         font-size: 1.45rem;
+    }
+
+    .projects-page .year-switch-buttons {
+        position: static;
+        flex-direction: row;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    /* Inputs en pleine largeur pour faciliter la saisie tactile. */
+    .projects-page .year-switch-button {
+        padding: 9px 13px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+    }
+
+    .projects-header {
+        gap: 8px;
     }
 
     #contact-form {
