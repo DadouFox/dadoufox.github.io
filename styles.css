@@ -463,12 +463,17 @@ footer {
     font-size: 1rem;
 }
 
+.contact-form-panel input[type="hidden"] {
+    display: none !important;
+}
+
 .contact-form-panel textarea {
     resize: vertical;
     min-height: 140px;
 }
 
 .contact-form-panel button {
+    appearance: none;
     margin-top: 4px;
     border: 1px solid rgba(215, 181, 255, 0.72);
     background: rgba(215, 181, 255, 0.14);
