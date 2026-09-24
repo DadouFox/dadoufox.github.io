@@ -13,10 +13,11 @@
     <header>
         <nav>
             <a href="../index.html" title="Accueil">Accueil</a>
-            <a href="skills.html" title="Mes compétences">Compétences</a>
-            <a href="contact.html" title="Me contacter">Contact</a>
             <a href="cursus.html" title="Mon cursus scolaire">Cursus Scolaire</a>
+            <a href="skills.html" title="Mes compétences">Compétences</a>
             <a href="projects.html" title="Mes projets">Projets</a>
+            <a href="stages.html" title="Mes stages">Stages</a>
+            <a href="contact.html" title="Me contacter">Contact</a>
             <a href="../CV Damien_Gauthier.pdf" title="Télécharger mon CV" class="cv-download" download>Télécharger le CV</a>
         </nav>
     </header>
@@ -44,7 +45,7 @@
 
             <details class="project-details">
                 <summary></summary>
-                <br></br>
+                <br>
                 <div class="project-item text-right">
                     <img src="../images/canoe.jpg" alt="Illustration Entreprise Canoë">
                     <p>Concernant la partie économie et durable, j’ai 
@@ -69,7 +70,7 @@
 
             <details class="project-details">
                 <summary></summary>
-                <br></br>
+                <br>
                 <div class="project-item text-left">
                     <img src="../images/combat.jpg" alt="Illustration Collaboration Équipe">
                     <p>Pendant ce projet, j'ai réalisé de nombreuses tâches. J'ai codé les fonctions de gestion d'une 
@@ -84,16 +85,30 @@
         <section id="projects-year-2" class="projects-year-2-section" data-year-section="2" hidden>
             <h2>SAÉ 2A : Développement d'une application</h2>
             <div class="project-item text-left">
-                <p>Cette section est prete pour presenter mes projets realises en 2e annee. Je pourrai y ajouter les SAE, les technologies utilisees et les competences developpees.</p>
-                <img src="../images/icons/python.svg" alt="Illustration Projets 2e annee">
+                <p>Lors de la SAE 2A, je devais, en équipe de 7, réaliser une application web et mobile de gestion de véhicules, de contrats et d'utilisateurs, appelée RentPark, sur une durée de 8 mois. Pour la partie site web, codée en PHP, j'ai développé les modèles des classes nécessaires à notre projet, comme les utilisateurs et les clients, et j'ai réalisé des tests sur les différentes vérifications ainsi que sur les modèles pour assurer leur bon fonctionnement.</p>
+                <img src="../images/rentpark.png" alt="Illustration du projet RentPark">
             </div>
+
+            <details class="project-details">
+                <summary></summary>
+                <br>
+                <div class="project-item text-right">
+                    <p>Pour ce projet, j'ai réalisé le modèle logique de données (MLD) de l'application. Côté administration, j'ai utilisé le framework Blazor afin de développer les fonctionnalités principales. J'ai contribué à l'ajout, la suppression et la modification d'un véhicule et d'un utilisateur. J'ai également participé au développement du service des statistiques du tableau de bord pour l'API, et je me suis assuré qu'il soit sécurisé avec un système de token et une gestion des rôles.</p>
+                    <img src="../images/api.png" alt="Illustration du service API et administration" class="project-image-api">
+                </div>
+
+                <div class="project-item text-left">
+                    <img src="../images/photoAndroid.png" alt="Illustration de l'application Android RentPark" class="project-image-android">
+                    <p>Pour la partie Android, j'ai participé au développement de la page des véhicules ainsi que de ses fonctionnalités (voir les détails d'un véhicule, ajouter, supprimer, modifier, rechercher) en passant par l'API. J'ai aussi codé la navigation entre les pages et la recherche d'un contrat avec un filtre pour trier ceux qui sont validés ou non. Ce projet m'a permis d'apprendre à travailler dans une grande équipe et de renforcer mes compétences techniques, notamment en développement de service web, en Blazor et en Kotlin.</p>
+                </div>
+            </details>
         </section>
     </main>
 
     <script src="../scripts/projects.js" defer></script>
 
     <footer>
-        2025 - Portfolio réalisé par Damien GAUTHIER.
+        2026 - Portfolio réalisé par Damien GAUTHIER.
     </footer>
 </body>
 

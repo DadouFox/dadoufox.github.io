@@ -106,6 +106,16 @@
     display: block;
 }
 
+.project-item img.project-image-api {
+    max-width: 210px;
+    width: 26%;
+}
+
+.project-item img.project-image-android {
+    max-width: 155px;
+    width: 19%;
+}
+
 .project-item.text-left p {
     order: 1;
 }
@@ -193,6 +203,12 @@ details.project-details:not([open]) > summary::after {
         max-width: 320px;
     }
 
+    .project-item img.project-image-api,
+    .project-item img.project-image-android {
+        width: 100%;
+        max-width: 320px;
+    }
+
     .projects-page main section {
         padding: 18px;
     }
@@ -205,7 +221,6 @@ details.project-details:not([open]) > summary::after {
     }
 
     .projects-page .year-switch-buttons {
-        position: static;
         flex-direction: row;
         gap: 8px;
         flex-wrap: wrap;
@@ -227,6 +242,11 @@ details.project-details:not([open]) > summary::after {
     }
 
     .project-item img {
+        max-width: 100%;
+    }
+
+    .project-item img.project-image-api,
+    .project-item img.project-image-android {
         max-width: 100%;
     }
 

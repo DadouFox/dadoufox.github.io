@@ -1,39 +1,33 @@
-(function () {
-    function initProjectYearToggle() {
-        var buttons = document.querySelectorAll('.year-switch-button[data-year]');
-        var sections = document.querySelectorAll('[data-year-section]');
-
-        if (!buttons.length || !sections.length) {
-            return;
-        }
-
-        function showYear(year) {
-            for (var i = 0; i < sections.length; i++) {
-                var section = sections[i];
-                section.hidden = section.getAttribute('data-year-section') !== year;
-            }
-
-            for (var j = 0; j < buttons.length; j++) {
-                var button = buttons[j];
-                var isActive = button.getAttribute('data-year') === year;
-                button.classList.toggle('is-active', isActive);
-                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            }
-        }
-
-        for (var k = 0; k < buttons.length; k++) {
-            buttons[k].addEventListener('click', function () {
-                showYear(this.getAttribute('data-year'));
-            });
-        }
-
-        showYear('1');
+function showYear(year, sections, buttons) {
+    for (let section of sections) {
+        section.hidden = section.getAttribute('data-year-section') !== year;
     }
+    for (let button of buttons) {
+        let isActive = button.getAttribute('data-year') === year;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    }
+}
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initProjectYearToggle);
+function initProjectYearToggle() {
+    let buttons = document.querySelectorAll('.year-switch-button[data-year]');
+    let sections = document.querySelectorAll('[data-year-section]');
+
+    if (!buttons.length || !sections.length) {
         return;
     }
 
+    for (let button of buttons) {
+        button.addEventListener('click', function () {
+            showYear(this.getAttribute('data-year'), sections, buttons);
+        });
+    }
+
+    showYear('1', sections, buttons);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProjectYearToggle);
+} else {
     initProjectYearToggle();
-})();
+}
