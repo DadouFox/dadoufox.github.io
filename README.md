@@ -45,5 +45,5 @@ Ce site web est un portfolio personnel développé dans le cadre de mes études 
 ## Auteur et contact
 
 **Damien Gauthier**  
-Étudiant en BUT Informatique à l'IUT de Clermont-Ferrand 
+Étudiant en BUT Informatique à l'IUT de Clermont-Ferrand
 
